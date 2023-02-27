@@ -1,6 +1,6 @@
 /*!
 * Start Bootstrap - Aksolabs Website v0.0.1 (undefined)
-* Copyright 2013-2022 Aksolabs Limited
+* Copyright 2013-2023 Aksolabs Limited
 * Licensed under MIT (https://github.com/StartBootstrap/aksolabs_website/blob/master/LICENSE)
 */
 var form = document.getElementById("my-form");
