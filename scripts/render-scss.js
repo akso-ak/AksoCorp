@@ -34,7 +34,7 @@ module.exports = function renderSCSS() {
 };
 
 const entryPoint = `/*!
-* Plashet Group - ${packageJSON.title} v${packageJSON.version}
+* Aksolabs Limited - ${packageJSON.title} v${packageJSON.version}
 * Copyright ${new Date().getFullYear()} ${packageJSON.author}
 * Licensed under ${packageJSON.license} license
 */
