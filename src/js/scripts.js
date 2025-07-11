@@ -79,6 +79,7 @@ async function handleSubmit(event) {
         }
     }).then(response => {
         if (response.ok) {
+            status.style.color = "green";
             status.innerHTML = "Thanks for your submission!";
             form.reset();
         } else {
