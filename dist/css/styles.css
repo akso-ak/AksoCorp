@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
 * Aksolabs Limited - Aksolabs Website v0.0.1
-* Copyright 2023 Aksolabs Limited
+* Copyright 2025 Aksolabs Limited
 * Licensed under MIT license
 */
 /*!
@@ -11196,10 +11196,9 @@ html {
   font-weight: 700;
 }
 .navbar-custom .navbar-nav .nav-item .nav-link {
-  text-transform: uppercase;
-  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1rem;
+  text-transform: uppercase;
 }
 
 header.masthead {

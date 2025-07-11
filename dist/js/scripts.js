@@ -1,6 +1,6 @@
 /*!
 * Start Bootstrap - Aksolabs Website v0.0.1 (undefined)
-* Copyright 2013-2023 Aksolabs Limited
+* Copyright 2013-2025 Aksolabs Limited
 * Licensed under MIT (https://github.com/StartBootstrap/aksolabs_website/blob/master/LICENSE)
 */
 async function onLoad() {
@@ -15,6 +15,11 @@ async function handleSubmit(event) {
     let status = document.getElementById("my-form-status");
     let data = new FormData(event.target);
 
+    if (!data.get('g-recaptcha-response')) {
+        status.innerHTML = "Please complete the CAPTCHA before submitting."
+        return;
+    }
+
     fetch(event.target.action, {
         method: form.method,
         body: data,
@@ -24,7 +29,7 @@ async function handleSubmit(event) {
     }).then(response => {
         if (response.ok) {
             status.innerHTML = "Thanks for your submission!";
-            form.reset()
+            form.reset();
         } else {
             response.json().then(data => {
                 if (Object.hasOwn(data, 'errors')) {
@@ -36,6 +41,10 @@ async function handleSubmit(event) {
         }
     }).catch(error => {
         status.innerHTML = "Oops! There was a problem submitting your form"
+    }).finally(() => {
+        if (typeof grecaptcha !== 'undefined') {
+            grecaptcha.reset();
+        }
     });
 }
 
