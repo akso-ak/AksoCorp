@@ -1,42 +1,6 @@
 /*!
 * Start Bootstrap - Aksolabs Website v0.0.1 (undefined)
-* Copyright 2013-2023 Aksolabs Limited
+* Copyright 2013-2025 Aksolabs Limited
 * Licensed under MIT (https://github.com/StartBootstrap/aksolabs_website/blob/master/LICENSE)
 */
-async function onLoad() {
-    let form = document.getElementById("my-form");
-    form.addEventListener("submit", handleSubmit)
-}
-                                    
-async function handleSubmit(event) {
-    event.preventDefault();
-
-    let form = document.getElementById("my-form")
-    let status = document.getElementById("my-form-status");
-    let data = new FormData(event.target);
-
-    fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            status.innerHTML = "Thanks for your submission!";
-            form.reset()
-        } else {
-            response.json().then(data => {
-                if (Object.hasOwn(data, 'errors')) {
-                    status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-                } else {
-                    status.innerHTML = "Oops! There was a problem submitting your form"
-                }
-            })
-        }
-    }).catch(error => {
-        status.innerHTML = "Oops! There was a problem submitting your form"
-    });
-}
-
-onLoad();
+async function onLoad(){var e=document.getElementById("my-form");function t(e){document.querySelectorAll("section[id]").forEach(e=>{e.style.display="none"});e=document.getElementById(e);e&&(e.style.display="block",e.scrollIntoView({behavior:"smooth"}))}e&&e.addEventListener("submit",handleSubmit);e=window.location.hash.substring(1);e&&document.getElementById(e)?t(e):t("home"),window.addEventListener("hashchange",()=>{var e=window.location.hash.substring(1);e&&document.getElementById(e)?t(e):t("home")}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();e=this.getAttribute("href").substring(1);"page-top"===e?window.scrollTo({top:0,behavior:"smooth"}):window.location.hash=e})})}async function handleSubmit(e){e.preventDefault();let t=document.getElementById("my-form"),o=document.getElementById("my-form-status");var n=new FormData(e.target);n.get("g-recaptcha-response")?fetch(e.target.action,{method:t.method,body:n,headers:{Accept:"application/json"}}).then(e=>{e.ok?(o.innerHTML="Thanks for your submission!",t.reset()):e.json().then(e=>{Object.hasOwn(e,"errors")?o.innerHTML=e.errors.map(e=>e.message).join(", "):(o.style.color="red",o.innerHTML="Oops! There was a problem submitting your form.")})}).catch(e=>{o.style.color="red",o.innerHTML="Oops! There was a problem submitting your form."}).finally(()=>{"undefined"!=typeof grecaptcha&&grecaptcha.reset()}):(o.style.color="red",o.innerHTML="Please complete the CAPTCHA before submitting.")}onLoad();
