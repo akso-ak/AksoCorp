@@ -3,7 +3,7 @@ const fs = require('fs');
 const upath = require('upath');
 const pug = require('pug');
 const sh = require('shelljs');
-const prettier = require('prettier');
+const { minify } = require('html-minifier');
 
 module.exports = function renderPug(filePath) {
     const destPath = filePath.replace(/src\/pug\//, 'dist/').replace(/\.pug$/, '.html');
@@ -21,15 +21,16 @@ module.exports = function renderPug(filePath) {
         sh.mkdir('-p', destPathDirname);
     }
 
-    const prettified = prettier.format(html, {
-        printWidth: 1000,
-        tabWidth: 4,
-        singleQuote: true,
-        proseWrap: 'preserve',
-        endOfLine: 'lf',
-        parser: 'html',
-        htmlWhitespaceSensitivity: 'ignore'
+    const minifiedHtml = minify(html, {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+        minifyCSS: true,
+        minifyJS: true
     });
 
-    fs.writeFileSync(destPath, prettified);
+    fs.writeFileSync(destPath, minifiedHtml);
 };

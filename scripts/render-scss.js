@@ -17,6 +17,7 @@ module.exports = function renderSCSS() {
         includePaths: [
             upath.resolve(upath.dirname(__filename), '../node_modules')
         ],
+        outputStyle: 'compressed'
       });
 
     const destPathDirname = upath.dirname(destPath);
