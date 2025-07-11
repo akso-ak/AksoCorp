@@ -67,7 +67,7 @@ async function handleSubmit(event) {
 
     if (!data.get('g-recaptcha-response')) {
         status.style.color = "red";
-        status.innerHTML = "Please complete the CAPTCHA before submitting."
+        status.innerHTML = "Please complete the reCAPTCHA before submitting."
         return;
     }
 
