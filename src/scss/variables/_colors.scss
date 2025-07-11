@@ -2,15 +2,22 @@
 // Colors
 //
 
-// Override Bootstrap color system
+// Dark, professional color palette
 
-$pink: #ee0979;
-$orange: #ff6a00;
+$dark-blue-primary: #212121; // Deep dark gray for primary background
+$dark-blue-secondary: #303030; // Slightly lighter dark gray for secondary elements
+$accent-blue: #42A5F5; // A vibrant blue for accents
+$text-light: #E0E0E0; // Light gray for text on dark backgrounds
+$text-muted-dark: #BDBDBD; // Slightly darker light gray for muted text
 
 // Override Bootstrap default state colors
 
-$primary: $pink;
-$secondary: $orange;
+$primary: $dark-blue-primary;
+$secondary: $accent-blue;
+
+// Neutral colors
+$light: $dark-blue-secondary; // Using secondary dark for 'light' elements in dark theme
+$dark: $text-light; // Using light text for 'dark' elements in dark theme
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast

@@ -66,6 +66,7 @@ async function handleSubmit(event) {
     let data = new FormData(event.target);
 
     if (!data.get('g-recaptcha-response')) {
+        status.style.color = "red";
         status.innerHTML = "Please complete the CAPTCHA before submitting."
         return;
     }
@@ -85,12 +86,14 @@ async function handleSubmit(event) {
                 if (Object.hasOwn(data, 'errors')) {
                     status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
                 } else {
-                    status.innerHTML = "Oops! There was a problem submitting your form"
+                    status.style.color = "red";
+                    status.innerHTML = "Oops! There was a problem submitting your form."
                 }
             })
         }
     }).catch(error => {
-        status.innerHTML = "Oops! There was a problem submitting your form"
+        status.style.color = "red";
+        status.innerHTML = "Oops! There was a problem submitting your form."
     }).finally(() => {
         if (typeof grecaptcha !== 'undefined') {
             grecaptcha.reset();

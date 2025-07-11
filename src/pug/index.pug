@@ -16,8 +16,7 @@ html(lang='en')
         script(async, defer, src='https://use.fontawesome.com/releases/v5.15.4/js/all.js', crossorigin='anonymous')
 
         // Google fonts
-        link(href='https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900' rel='stylesheet')
-        link(href='https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i' rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap' rel='stylesheet')
 
         // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
@@ -53,7 +52,7 @@ html(lang='en')
                                 a.btn.btn-primary.btn-lg.rounded-pill(href='#about') Learn More
                         .col-lg-6
                             .p-5
-                                img.img-fluid.rounded-circle(src='assets/img/masthead.jpg', alt='Modern Software Development')
+                                img.img-fluid.rounded-circle(src='assets/img/aksolabsLogo.jpg', alt='Modern Software Development')
 
             // Content section 2
             section#about
@@ -97,14 +96,14 @@ html(lang='en')
                     .row.gx-5.align-items-center
                         .col-lg-6
                             .p-5
-                                img.img-fluid.rounded-circle(src='assets/img/aksolabsLogo.jpg', alt='How we do it')
+                                img.img-fluid.rounded-circle(src='assets/img/contactUs.jpg', alt='How we do it')
                         .col-lg-6
                             .p-5
                                 h2.display-4 Get in touch
                                 p
                                     | Please fill in the form below if you would like to get in touch
                                 p
-                                    | You can also find us on #[a(href='https://www.linkedin.com/company/82009710/') LinkedIn]
+                                    | You can also find us on #[a(href='https://www.linkedin.com/company/82009710/') #[i.fab.fa-linkedin] LinkedIn]
 
                                 form(action="https://formspree.io/f/xeqneyla" method="POST" id="my-form")
                                     div(class="mb-3")
@@ -119,7 +118,7 @@ html(lang='en')
                                 p#my-form-status
                                 
         // Footer
-        footer.py-5.bg-dark
+        footer.py-5.bg-primary
             .container.px-5
                 p.m-0.text-center.text-white.small Copyright &copy; Aksolabs Limited 2011-#{new Date().getFullYear()}
 

@@ -1,0 +1,37 @@
+//
+// Masthead
+//
+
+.masthead {
+    background-color: $primary; // Use primary color
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    color: $text-light; // Ensure text is light on dark background
+    .masthead-content {
+        h1 {
+            font-size: 3.5rem;
+            line-height: 3.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+            line-height: 2rem;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .masthead {
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+        .masthead-content {
+            h1 {
+                font-size: 6.5rem;
+                line-height: 6.5rem;
+            }
+            h2 {
+                font-size: 3.5rem;
+                line-height: 3.5rem;
+            }
+        }
+    }
+}

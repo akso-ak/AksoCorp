@@ -2,12 +2,14 @@
 .navbar-custom {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: $dark-blue-primary; // Use primary dark color for navbar
+  @include elevation(1); // Apply subtle elevation
   .navbar-brand {
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: 0.1rem;
     font-weight: 700;
+    color: $text-light; // Light text for brand
   }
   .navbar-nav {
     .nav-item {
@@ -15,6 +17,10 @@
         font-weight: 700;
         letter-spacing: 0.1rem;
         text-transform: uppercase;
+        color: $text-light; // Light text for nav links
+        &:hover {
+          color: $accent-blue; // Accent color on hover
+        }
       }
     }
   }

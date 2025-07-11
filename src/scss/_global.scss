@@ -2,6 +2,18 @@
 // Global
 //
 
+// Material Design Elevation Mixin
+@mixin elevation($level: 1) {
+    @if $level == 1 {
+        box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    } @else if $level == 2 {
+        box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12);
+    } @else if $level == 3 {
+        box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
+    }
+    // Add more levels as needed
+}
+
 // Scroll padding for all scroll targets on page used with
 // native CSS smooth scrolling
 //
@@ -15,6 +27,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: $primary; // Use primary dark color for body background
+    color: $text-light; // Light text on dark background
 }
 
 main {
@@ -23,4 +37,20 @@ main {
 
 header {
     margin-bottom: 5rem;
+}
+
+section {
+    background-color: $dark-blue-secondary; // Use secondary dark color for sections
+    padding: 2rem; // Add some padding
+    margin-bottom: 2rem; // Space between sections
+    border-radius: 8px; // Rounded corners for card-like appearance
+    @include elevation(1); // Apply subtle elevation
+
+    // Specific style for LinkedIn link in contact section
+    &#contact a, &#about a {
+        color: #FFFFFF; // Pure white for better visibility
+        &:hover {
+            color: lighten(#FFFFFF, 10%); // Slightly lighter on hover
+        }
+    }
 }
